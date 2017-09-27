@@ -1,4 +1,4 @@
-library(gplots)  
+library(gplots)
 library(Heatplus)
 library(vegan)
 library(RColorBrewer)
@@ -21,12 +21,12 @@ heatmap(as.matrix(all.data), Rowv = as.dendrogram(row.clus), Colv = NA, margins 
 
 
 
-pdf("heatmap.pdf",height=10,width=9)
+pdf("heatmap.pdf",height=9,width=6)
 plot(annHeatmap2(as.matrix(all.data),
 col = colorRampPalette(c("#d73027", "#fdae61","#ffffbf","#abd9e9","#2c7bb6"),
                        space = "rgb")(24), breaks = 24,
-dendrogram = list(Row = list(dendro = as.dendrogram(row.clus))), legend = 1, 
-labels = list(Col = list(nrow = 10))))
+dendrogram = list(Row = list(dendro = as.dendrogram(row.clus))), legend = 2,
+labels = list(Col = list(nrow = 10),cex=1.75)))
 dev.off()
 
 
